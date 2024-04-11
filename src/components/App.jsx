@@ -1,12 +1,18 @@
+import { Outlet } from "react-router-dom"
+import NavBar from "./NavBar"
+
 function App() {
-  import About from "./components/About"
-  import Contact from "./components/Contact"
-  import Home from "./components/Home"
+  
 
 
   return (
     <>
-     <h1>Heads Up Poker</h1>
+     
+    <nav><NavBar /> </nav>
+
+    <h1>Heads Up Poker</h1>
+
+    <Outlet />
     
     </>
   )
