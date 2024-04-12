@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom"
 import NavBar from "./NavBar"
 
 function App() {
+
+  //state for wins and losses
   
 
 
