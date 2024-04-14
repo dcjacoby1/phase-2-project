@@ -4,6 +4,8 @@ function ComputerCards ({cards}) {
     if (cards.length <4) {
         return null
     }
+
+
     return(
       <>  
         <div id="computer-cards" >
