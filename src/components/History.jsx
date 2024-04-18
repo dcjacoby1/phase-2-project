@@ -6,9 +6,7 @@ function History() {
 
   const context = useOutletContext()
   const history = context.history
-  const setHistory = context.setHistory
-  const currentHand = context.currentHand
-  const handWinner = context.handWinner
+  
 
   // //post useState
   // const [formData, setFormData] = useState({
@@ -16,25 +14,7 @@ function History() {
   //   handWinner: ""
   // })
 
-  // //post request
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/history", {
 
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type':
-  //       'application/json',
-  //       'Accept': 'application/json'
-  //       },
-  //       body: JSON.stringify(formData)
-  //       })
-  //       .then(r => r.json())
-  //       .then(newFormObj => {
-  //         setFormData({currentHand: "", handWinner: ""})
-  //         setHistory([...history, newFormObj])
-  //       })
-        
-  //     },[])
 
   const mappedHistory = history.map(log => 
   {

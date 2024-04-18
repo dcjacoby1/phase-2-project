@@ -1,19 +1,5 @@
 {
   "history": [
-    {
-      "id": "7157",
-      "currentHand": "1",
-      "handWinner": "bob"
-    },
-    {
-      "id": "a932",
-      "currentHand": "2",
-      "handWinner": "bob"
-    },
-    {
-      "id": "dd84",
-      "currentHand": "3",
-      "handWinner": "bob"
-    }
+   
   ]
 }

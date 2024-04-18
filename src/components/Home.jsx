@@ -1,6 +1,6 @@
 import PlayerCards from "./PlayerCards"
 import ComputerCards from "./ComputerCards"
-import { useState} from "react"
+import { useEffect, useState} from "react"
 import { useOutletContext } from "react-router-dom"
 
 function Home() {
@@ -8,6 +8,7 @@ function Home() {
     const [flipCard, setFlipCard] = useState(true)
     //state for which buttons to show
     const [hideButton, setHideButton] = useState(true)
+    
 
 
 
@@ -25,10 +26,9 @@ function Home() {
     const setCurrentHand = context.setCurrentHand
     const handWinner = context.handWinner
     const setHandWinner = context.setHandWinner
-    // //only used for shuffle (not yet introduced), may not need
-    // const deckID = context.deckID
-    // //not used
-    // const setDealtCards = context.setDealtCards
+    const history = context.history
+    const setHistory = context.setHistory
+    
 
 
 
@@ -47,6 +47,28 @@ function Home() {
         'KING': 13,
         'ACE': 14
     }
+    useEffect(() =>{
+        if (currentHand > 0) {
+            fetch("http://localhost:3000/history", {
+            method: 'POST',
+            headers: {
+            'Content-Type':
+            'application/json',
+            'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                currentHand: currentHand,
+                handWinner: handWinner
+            })
+            })
+            .then(r => r.json())
+            .then(newFormObj => {
+              setHistory([...history, newFormObj])
+            })
+        }
+       
+
+    }, [currentHand])
     
 
     //whenever the nextRound button is clicked, new cards come out
@@ -118,6 +140,7 @@ function Home() {
             setHandWinner("Player")
             console.log(handWinner)
             console.log(currentHand)
+
         } else if(playerGreater !== isCall){
             setCpuScore(cpuScore + 1)
             setWinRound(false)
@@ -135,15 +158,15 @@ function Home() {
         <h1>Current Score: </h1>
         <h2>CPU:{cpuScore}</h2>
         <h2>Player:{playerScore}</h2>
-        {currentHand > 0 && (
+        {(currentHand > 0) && (
             <h1 className="winner-text">{winRound ? "You Won!" : "You Lost!"}</h1>
         )}
         <ComputerCards flipCard={flipCard} cards={dealtCards} />
         <PlayerCards />
         
         <div id="selector" onClick={handleClick}>
-        {hideButton?(<div id="button-container"><button onClick={handleCall} class="call-button" class="button">Call</button> 
-        <button onClick={handleFold}class="fold-button" className="button">Fold</button></div>) :
+        {hideButton?(<div id="button-container"><button onClick={handleCall}  className="button">Call</button> 
+        <button onClick={handleFold} className="button">Fold</button></div>) :
         (<button onClick={nextRound} className="button">Next Round</button>)}
         </div>
         </>
