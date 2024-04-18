@@ -7,41 +7,68 @@ function App() {
   
   //state to hold the current hands that were dealt
   const [dealtCards, setDealtCards] = useState([])
-  const[deckID, setDeckID] = useState({})
+  //state to hold the ID of the deck of cards
+  const [deckID, setDeckID] = useState({})
 
+  const [playerScore, setPlayerScore] = useState(0)
+  const [cpuScore, setCpuScore] = useState(0)
+
+  const [winRound, setWinRound] = useState(true)
+  const [currentHand, setCurrentHand] = useState(0)
+  const [handWinner, setHandWinner] = useState('')
 
       //used to pull a get request for the new deck of cards
-      useEffect(() => {
-        //async fetch bc the second fetch needs the data from the first fetch
-        const fetchData = async () => {
-          try {
-            //first fetch pulls the ID from the deck
-            const response = await fetch(
-              "https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
-            );
-            const data = await response.json();
-            //sets the state of the ID to 
-            setDeckID(data.deck_id);
-            //run function deal cards that pulls specific cards
-            dealCards(data.deck_id);
-          } catch (error) {
-            console.error("Error fetching data:", error);
-          }
-        };
+      useEffect((createDeck),[])
+
+      //use effect that waits for a change in the deck ID to run dealCards function
+      useEffect((dealCards),[deckID])
+
+      // useEffect(() => {
+      //   fetch("http://localhost:3000/history"), {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type':
+      //       'application/json',
+      //       'Accept': 'application/json'
+      //   },
+      //     body: JSON.stringify({
+      //       currentHand: '',
+      //       handWinner: ''
+      //     })
+      //   }
+      //   .then(r => r.json())
+        
+      // },[winRound])
+
+
+      function createDeck() {
+        //first fetch pulls the ID from the deck
+        fetch("https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+        .then(response => response.json())
+        .then(data => 
+        //sets the state of the ID
+          setDeckID(data.deck_id)
+        )
+        .catch(error => console.log(error))
+
+      }
       
-        fetchData();
-      }, []);
-      
-      function dealCards(deckID) {
+      //dealCards function draws cards from the deck
+      function dealCards() {
+        //prevents initial render from running 404 not found
+        //this is because deckID has no value until state of ID updates
+        if (Object.keys(deckID).length === 0){
+          return
+        //once deckID is updated, the fetch for drawing cards will run
+        } else {
         fetch(`https://www.deckofcardsapi.com/api/deck/${deckID}/draw/?count=4`)
           .then((res) => res.json())
+          //updates state of 
           .then((hand) => setDealtCards(hand.cards));
+        }
       }
       
      
-
-
-
 
   return (
     <>
@@ -50,7 +77,7 @@ function App() {
 
     <h1>Heads Up Poker</h1>
 
-    <Outlet context={{dealtCards, setDealtCards}}/>
+    <Outlet context={{dealtCards, deckID, setDealtCards, dealCards, setPlayerScore, playerScore, setCpuScore, cpuScore, winRound, setWinRound, currentHand, setCurrentHand, handWinner, setHandWinner}}/>
     
     </>
   )
@@ -58,16 +85,3 @@ function App() {
 
 export default App
 
-
-//routing --> multiple pages
-//server --> json-server
-
-//Restful routes (for crud , the end of the url tells us where it is going )
-//Get /movies --> data for all movies
-//Get /movies/1 --> movie with id 1
-//Post /movies --> create data for a movie
-//Patch /movies/1 --> update data for movie with id 1
-//Delete /movies/1 --> delete movie 1
-
-//frontend (same goes for routing)
-// Get /home --> shows home page

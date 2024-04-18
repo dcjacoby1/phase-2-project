@@ -1,0 +1,20 @@
+{
+    "history": [
+        {
+            "currentHand": "1",
+            "handWinner": "CPU"
+            
+        },
+        {
+            "currentHand": "2",
+            "handWinner": "CPU"
+        },
+        {
+            "currentHand": "3",
+            "handWinner": "CPU"
+        }
+        
+
+    ]
+
+}
