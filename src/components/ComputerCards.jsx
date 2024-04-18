@@ -8,7 +8,7 @@ function ComputerCards ({cards, flipCard}) {
     }
 
     return(
-      <>  
+      <div id="cards">  
         {/* depending on boolean value of flipCard, front or back of card will show  */}
         <div id="computer-cards" >
          {flipCard? (<img className="left-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="Computer Card Front" title="Computer Card" width={120} height={150}/>):
@@ -21,7 +21,7 @@ function ComputerCards ({cards, flipCard}) {
         <img className="left-card" src={cards[2].image} alt="Player Card" title="Player Card" width={120} height={150}/>
         <img className="right-card" src={cards[3].image} alt="Player Card" title="Player Card" width={120} height={150}/>
     </div>
-    </>
+    </div>
 
     )
 }

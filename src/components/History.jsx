@@ -1,36 +1,62 @@
 import { useEffect, useState } from "react"
+import { useOutletContext } from "react-router-dom"
+
 
 function History() {
-  const [history, setHistory] = useState([])
-  useEffect(() => {
-    fetch("http://localhost:3000/history")
-    .then(r => r.json())
-    .then(data => setHistory(data))
-  },[])
+
+  const context = useOutletContext()
+  const history = context.history
+  const setHistory = context.setHistory
+  const currentHand = context.currentHand
+  const handWinner = context.handWinner
+
+  // //post useState
+  // const [formData, setFormData] = useState({
+  //   currentHand: "",
+  //   handWinner: ""
+  // })
+
+  // //post request
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/history", {
+
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type':
+  //       'application/json',
+  //       'Accept': 'application/json'
+  //       },
+  //       body: JSON.stringify(formData)
+  //       })
+  //       .then(r => r.json())
+  //       .then(newFormObj => {
+  //         setFormData({currentHand: "", handWinner: ""})
+  //         setHistory([...history, newFormObj])
+  //       })
+        
+  //     },[])
 
   const mappedHistory = history.map(log => 
   {
     return(
-   <tr key={log.currentHand}> 
-    <td>{log.currentHand}</td>
-    <td>{log.handWinner}</td>
+   <tr key={log.id}> 
+    <td className="left-column">{log.currentHand}</td>
+    <td className="right-column">{log.handWinner}</td>
   </tr>
-    )
-    
-    
+    ) 
   }
   
   )
   
 return(
-<>
+<div className="modal-container-1">
     <h1>history page</h1>
-<div id="table">
+<div className="table">
     <table>
   <thead>
     <tr>
-      <th>Column 1</th>
-      <th>Column 2</th>
+      <th className="left-column">Hand Count</th>
+      <th className="right-column">Hand Winner</th>
     </tr>
   </thead>
   <tbody>
@@ -38,7 +64,7 @@ return(
   </tbody>
 </table>
 </div>
-</>
+</div>
 )
 }
 

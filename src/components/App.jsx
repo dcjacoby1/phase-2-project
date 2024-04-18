@@ -10,10 +10,17 @@ function App() {
   //state to hold the ID of the deck of cards
   const [deckID, setDeckID] = useState({})
 
+    //get request useState for history
+    const [history, setHistory] = useState([])
+
+
+//adds to player score when winning a hand
   const [playerScore, setPlayerScore] = useState(0)
+  //adds to cpu score when losing a hand
   const [cpuScore, setCpuScore] = useState(0)
 
-  const [winRound, setWinRound] = useState(true)
+  //says whether they lose the hand or not
+  const [winRound, setWinRound] = useState(null)
   const [currentHand, setCurrentHand] = useState(0)
   const [handWinner, setHandWinner] = useState('')
 
@@ -23,22 +30,13 @@ function App() {
       //use effect that waits for a change in the deck ID to run dealCards function
       useEffect((dealCards),[deckID])
 
-      // useEffect(() => {
-      //   fetch("http://localhost:3000/history"), {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type':
-      //       'application/json',
-      //       'Accept': 'application/json'
-      //   },
-      //     body: JSON.stringify({
-      //       currentHand: '',
-      //       handWinner: ''
-      //     })
-      //   }
-      //   .then(r => r.json())
-        
-      // },[winRound])
+       //getRequest
+      useEffect(() => {
+        fetch("http://localhost:3000/history")
+        .then(r => r.json())
+        .then(data => setHistory(data))
+      },[])
+
 
 
       function createDeck() {
@@ -75,9 +73,9 @@ function App() {
      
     <nav><NavBar /> </nav>
 
-    <h1>Heads Up Poker</h1>
+    <h1 id="header-text">Two Card War</h1>
 
-    <Outlet context={{dealtCards, deckID, setDealtCards, dealCards, setPlayerScore, playerScore, setCpuScore, cpuScore, winRound, setWinRound, currentHand, setCurrentHand, handWinner, setHandWinner}}/>
+    <Outlet context={{dealtCards, deckID, setDealtCards, dealCards, setPlayerScore, playerScore, setCpuScore, cpuScore, winRound, setWinRound, currentHand, setCurrentHand, handWinner, setHandWinner, setHistory, history}}/>
     
     </>
   )

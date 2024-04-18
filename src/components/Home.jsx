@@ -135,14 +135,16 @@ function Home() {
         <h1>Current Score: </h1>
         <h2>CPU:{cpuScore}</h2>
         <h2>Player:{playerScore}</h2>
-        <h1>{winRound? "you won" : "you lost"}</h1>
+        {currentHand > 0 && (
+            <h1 className="winner-text">{winRound ? "You Won!" : "You Lost!"}</h1>
+        )}
         <ComputerCards flipCard={flipCard} cards={dealtCards} />
         <PlayerCards />
         
         <div id="selector" onClick={handleClick}>
-        {hideButton?(<div><button onClick={handleCall}>Call</button> 
-        <button onClick={handleFold}>Fold</button></div>) :
-        (<button onClick={nextRound}>Next Round</button>)}
+        {hideButton?(<div id="button-container"><button onClick={handleCall} class="call-button" class="button">Call</button> 
+        <button onClick={handleFold}class="fold-button" className="button">Fold</button></div>) :
+        (<button onClick={nextRound} className="button">Next Round</button>)}
         </div>
         </>
         
