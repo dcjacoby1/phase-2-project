@@ -19,8 +19,9 @@ function App() {
   //adds to cpu score when losing a hand
   const [cpuScore, setCpuScore] = useState(0)
 
-  //says whether they lose the hand or not
+  //used for "you won!" or "you lost!"
   const [winRound, setWinRound] = useState(null)
+  //these 2 states are used for post request
   const [currentHand, setCurrentHand] = useState(0)
   const [handWinner, setHandWinner] = useState('')
 
@@ -30,7 +31,8 @@ function App() {
       //use effect that waits for a change in the deck ID to run dealCards function
       useEffect((dealCards),[deckID])
 
-       //getRequest
+       //getRequest for handinfo. updates history state...
+       //which is used for displaying logs on history page
       useEffect(() => {
         fetch("http://localhost:3000/history")
         .then(r => r.json())
@@ -38,7 +40,7 @@ function App() {
       },[])
 
 
-
+      //function used for first useEffect 
       function createDeck() {
         //first fetch pulls the ID from the deck
         fetch("https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
@@ -65,13 +67,15 @@ function App() {
           .then((hand) => setDealtCards(hand.cards));
         }
       }
+
+    
       
      
 
   return (
     <>
      
-    <nav><NavBar /> </nav>
+    <nav><NavBar setHistory={setHistory} history={history} createDeck={createDeck}/> </nav>
 
     <h1 id="header-text">Two Card War</h1>
 
