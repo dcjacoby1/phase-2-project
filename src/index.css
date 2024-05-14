@@ -1,44 +1,38 @@
-
-
-
-
-
- :root {
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   background-image: url(https://media.istockphoto.com/id/1407257859/vector/poker-table-with-realistic-wooden-frame.jpg?s=612x612&w=0&k=20&c=n-31QpTsQ_vUhG8rP58cWu17QvixoIH2TUsPnKtJqi4=);
-  background-size: 80%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
-  
-  
-  
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 #selector {
   display: flex;
-  position: fixed; 
-    top: 73%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+  /* position: fixed;
+  top: 73%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
 .call-button,
 .fold-button {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
-
-
 
 .button {
   color: white;
@@ -50,27 +44,27 @@
 }
 
 .winner-text {
-  position: fixed; 
+  /* position: fixed;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-
+  color: white; */
+  font-size: 3em;
 }
 
-#cards {
-  position: fixed; 
+/* #cards {
+  position: fixed;
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .grid-layout {
   display: grid;
   grid-template-columns: auto;
 }
 
-.modal-container-1{
+.modal-container-1 {
   background-color: rgb(202, 202, 202);
   color: black;
   text-align: center;
@@ -83,9 +77,8 @@
   width: 60%;
   border-color: blue;
   font-size: 1.3em;
-  
 }
-.modal-container-2{
+.modal-container-2 {
   background-color: rgb(202, 202, 202);
   color: black;
   text-align: center;
@@ -97,56 +90,53 @@
   height: 75vh;
   width: 60%;
   border-color: blue;
-  
 }
 
 .table {
   padding-top: 5%;
-  position: absolute;
+  /* position: absolute; */
   padding-top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: larger;
-
 }
 
+/* .right-column {
+  margin-right: 40%;
+}
 .right-column {
-  margin-right: 40%; 
-}
-.right-column {
-  margin-left: 40%; 
-}
+  margin-left: 40%;
+} */
 
-.modal-container-1 h1{
+.modal-container-1 h1 {
   font-size: 3em;
-  margin-top: auto;
-  padding-top: 3%;
+  /* margin-top: auto; */
+  /* padding-top: 3%;
+   */
   color: blue;
-
 }
 
-.modal-container-2 h1{
-  font-size: 3em;
-  margin-top: auto;
-  padding-top: 3%;
+.modal-container-2 h1 {
+  /* font-size: 3em; */
+  /* margin-top: auto;
+  padding-top: 3%; */
   color: blue;
-
 }
 
 #rules-text {
-  padding-top: 5%;
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: larger;
+  /* padding-top: 5%; */
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* font-size: larger; */
 }
-
-
 
 #header-text {
   text-align: center;
-  
+  margin-top: 2%;
+  font-size: 3.5em;
+  line-height: 1;
 }
 
 #nav-bar {
@@ -155,4 +145,219 @@
   background-color: rgb(52, 52, 52);
   color: white;
   height: 80px;
+}
+
+.nav-item {
+  font-size: 35px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.justify-start {
+  justify-content: start;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.align-between {
+  align-items: space-between;
+}
+
+.flex-gap {
+  gap: 20px;
+}
+
+.text-center {
+  text-align: center;
+  /* border: 1px solid red; */
+}
+
+.scroll {
+  overflow-y: scroll;
+  max-height: 70%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.heading-1 {
+  text-align: center;
+  margin-top: 2%;
+  font-size: 3.5em;
+  line-height: 1;
+}
+.heading-2 {
+  font-size: 2em;
+}
+
+.heading-3 {
+  font-size: 1.5em;
+}
+
+.with-margin {
+  margin-top: 6vh;
+}
+
+/* add media queries for responsiveness */
+@media (max-width: 768px) {
+  #rules-text h2 {
+    font-size: 1.2em;
+  }
+
+  #rules-text p {
+    font-size: 0.6em;
+  }
+
+  .with-margin {
+    margin-top: 5vh;
+  }
+  .heading-1 {
+    font-size: 3em;
+  }
+  .heading-2 {
+    font-size: 2.5em;
+  }
+  .heading-3 {
+    font-size: 1.3em;
+  }
+  .modal-container-1 {
+    width: 90%;
+  }
+  .modal-container-2 {
+    width: 90%;
+  }
+  .modal-container-1 h1 {
+    font-size: 2em;
+  }
+  .modal-container-2 h1 {
+    font-size: 2em;
+  }
+  #header-text {
+    font-size: 2.5em;
+  }
+  #rules-text {
+    font-size: 1.5em;
+  }
+  .button {
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+  }
+  .winner-text {
+    font-size: 2em;
+  }
+  .table {
+    font-size: medium;
+  }
+  .right-column {
+    margin-right: 20%;
+  }
+  .right-column {
+    margin-left: 20%;
+  }
+  .nav-item {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  #rules-text h2 {
+    font-size: 1.2em;
+  }
+
+  #rules-text p {
+    font-size: 0.9em;
+  }
+
+  .with-margin {
+    margin-top: 8vh;
+  }
+  .heading-1 {
+    font-size: 2.5em;
+  }
+  .heading-2 {
+    font-size: 1.5em;
+  }
+  .heading-3 {
+    font-size: 1em;
+  }
+  .modal-container-1 {
+    width: 90%;
+  }
+  .modal-container-2 {
+    width: 90%;
+  }
+  .modal-container-1 h1 {
+    font-size: 1.5em;
+  }
+  .modal-container-2 h1 {
+    font-size: 1.5em;
+  }
+  #header-text {
+    font-size: 2em;
+  }
+  #rules-text {
+    font-size: 1em;
+  }
+  .button {
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+  }
+  .winner-text {
+    font-size: 1.5em;
+  }
+  .table {
+    font-size: medium;
+  }
+  .right-column {
+    margin-right: 20%;
+  }
+  .right-column {
+    margin-left: 20%;
+  }
+  .nav-item {
+    font-size: 20px;
+    padding: 0;
+  }
+  #nav-bar {
+    height: 50px;
+  }
 }
