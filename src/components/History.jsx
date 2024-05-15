@@ -36,7 +36,7 @@ function History() {
   }
 
   //maps each log to its seperate row in a table
-  const mappedHistory = history.map((log) => {
+  const mappedHistory = slicedHistory.map((log) => {
     return (
       <div className="flex-container justify-around text-center" key={log.id}>
         <p className="text-center">{log.currentHand}</p>
@@ -60,21 +60,17 @@ function History() {
         <button onClick={handlePrevious} style={{ marginRight: "10px", padding: "10px" }}>
           &lt;
         </button>
-        <button onClick={handleNext} style={{ marginLeft: "10px", padding: "10px" }}>
-          &gt;
-        </button>
-      </div>
 
-      <div
-        className="pagination"
-        style={{
-          position: "fixed",
-          bottom: "25px", // Adjust this value to change the distance from the bottom
-          left: "50%", // This centers the pagination horizontally
-          transform: "translateX(-50%)", // This centers the pagination horizontally
-        }}
-      >
-        {/* {pagination.map((page, index) => (
+        {/* <div
+          className="pagination"
+          style={{
+            // position: "fixed",
+            bottom: "25px", // Adjust this value to change the distance from the bottom
+            left: "50%", // This centers the pagination horizontally
+            transform: "translateX(-50%)", // This centers the pagination horizontally
+          }}
+        > */}
+        {pagination.map((page, index) => (
           <button
             key={index}
             onClick={() => handleClick(page)}
@@ -83,7 +79,11 @@ function History() {
           >
             {page}
           </button>
-        ))} */}
+        ))}
+        {/* </div> */}
+        <button onClick={handleNext} style={{ marginLeft: "10px", padding: "10px" }}>
+          &gt;
+        </button>
       </div>
     </div>
   );
