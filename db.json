@@ -1,3 +1,194 @@
 {
-  "history": []
+  "history": [
+    {
+      "id": "9213",
+      "currentHand": 1,
+      "handWinner": "Player"
+    },
+    {
+      "id": "be8d",
+      "currentHand": 2,
+      "handWinner": "Player"
+    },
+    {
+      "id": "1ebd",
+      "currentHand": 3,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "90af",
+      "currentHand": 4,
+      "handWinner": "Player"
+    },
+    {
+      "id": "8177",
+      "currentHand": 5,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "025c",
+      "currentHand": 6,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "9939",
+      "currentHand": 7,
+      "handWinner": "Player"
+    },
+    {
+      "id": "02fb",
+      "currentHand": 8,
+      "handWinner": "Player"
+    },
+    {
+      "id": "3bd4",
+      "currentHand": 8,
+      "handWinner": "Player"
+    },
+    {
+      "id": "c8bd",
+      "currentHand": 9,
+      "handWinner": "Player"
+    },
+    {
+      "id": "d844",
+      "currentHand": 10,
+      "handWinner": "Player"
+    },
+    {
+      "id": "67da",
+      "currentHand": 11,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "2b23",
+      "currentHand": 12,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "9f0c",
+      "currentHand": 13,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "63e4",
+      "currentHand": 13,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "7a24",
+      "currentHand": 14,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "15f2",
+      "currentHand": 15,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "f6ab",
+      "currentHand": 16,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "6bed",
+      "currentHand": 17,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "4c7e",
+      "currentHand": 1,
+      "handWinner": "Player"
+    },
+    {
+      "id": "f602",
+      "currentHand": 2,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "a8a8",
+      "currentHand": 1,
+      "handWinner": "Player"
+    },
+    {
+      "id": "758b",
+      "currentHand": 1,
+      "handWinner": "Player"
+    },
+    {
+      "id": "a153",
+      "currentHand": 1,
+      "handWinner": "Player"
+    },
+    {
+      "id": "8488",
+      "currentHand": 2,
+      "handWinner": "Player"
+    },
+    {
+      "id": "197b",
+      "currentHand": 3,
+      "handWinner": "Player"
+    },
+    {
+      "id": "0fa5",
+      "currentHand": 4,
+      "handWinner": "Player"
+    },
+    {
+      "id": "67f1",
+      "currentHand": 5,
+      "handWinner": "Player"
+    },
+    {
+      "id": "80b8",
+      "currentHand": 6,
+      "handWinner": "Player"
+    },
+    {
+      "id": "03e5",
+      "currentHand": 7,
+      "handWinner": "Player"
+    },
+    {
+      "id": "d0a3",
+      "currentHand": 8,
+      "handWinner": "Player"
+    },
+    {
+      "id": "0236",
+      "currentHand": 9,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "260a",
+      "currentHand": 10,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "92dc",
+      "currentHand": 11,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "fd1e",
+      "currentHand": 12,
+      "handWinner": "CPU"
+    },
+    {
+      "id": "6605",
+      "currentHand": 13,
+      "handWinner": "Player"
+    },
+    {
+      "id": "639c",
+      "currentHand": 14,
+      "handWinner": "Player"
+    },
+    {
+      "id": "93a4",
+      "currentHand": 15,
+      "handWinner": "Player"
+    }
+  ]
 }
