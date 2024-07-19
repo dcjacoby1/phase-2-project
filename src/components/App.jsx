@@ -77,7 +77,7 @@ function App() {
      
     <nav><NavBar setHistory={setHistory} history={history} createDeck={createDeck}/> </nav>
 
-    <h1 id="header-text">Two Card War</h1>
+    <h1 id="header-text">Heads Up War</h1>
 
     <Outlet context={{dealtCards, deckID, setDealtCards, dealCards, setPlayerScore, playerScore, setCpuScore, cpuScore, winRound, setWinRound, currentHand, setCurrentHand, handWinner, setHandWinner, setHistory, history}}/>
     

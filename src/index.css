@@ -51,10 +51,11 @@
 
 .winner-text {
   position: fixed; 
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  font-size: 60pt;
 
 }
 
@@ -83,8 +84,8 @@
   width: 60%;
   border-color: blue;
   font-size: 1.3em;
-  
 }
+
 .modal-container-2{
   background-color: rgb(202, 202, 202);
   color: black;
@@ -97,24 +98,28 @@
   height: 75vh;
   width: 60%;
   border-color: blue;
-  
+  font-size: 1.3em;
 }
+
 
 .table {
-  padding-top: 5%;
-  position: absolute;
-  padding-top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
   font-size: larger;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse; 
+}
+
+
+
+.left-column {
+  margin-right: 20px; 
 }
 
 .right-column {
-  margin-right: 40%; 
-}
-.right-column {
-  margin-left: 40%; 
+  margin-left: 20px; 
 }
 
 .modal-container-1 h1{
@@ -135,11 +140,9 @@
 
 #rules-text {
   padding-top: 5%;
-  position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: larger;
+  font-size: larger;
+  position: relative; 
+  top: -100px;
 }
 
 

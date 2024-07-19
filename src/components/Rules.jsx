@@ -1,9 +1,9 @@
 function Rules() {
     return(
-        <div className="modal-container-2">
-            
-            <h1>Rules</h1>
+        <div className="modal-container-1">
             <div id="rules-text">
+            <h1>Rules</h1>
+            
             <h2>Objective</h2>
             <p>Determine if your hand is stronger than the CPU's hand</p>
             <h2>Gameplay</h2>

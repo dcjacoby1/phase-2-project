@@ -45,8 +45,8 @@ function History() {
     })
 
   return (
-    <div className="modal-container-1">
-        <h1>history page</h1>
+    <div className="modal-container-2">
+        <h1>History Page</h1>
     <div className="table">
         <table>
       <thead>
